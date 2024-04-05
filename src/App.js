@@ -1,29 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { onRequest } from "./function/helloworld.js";
+import { Routes, Route } from 'react-router-dom';
+
+import Posts from './components/posts';
+import Post from './components/post';
 
 function App() {
-  // async function onRequestGet(context) {
-  //   return context.env.SERVICE.fetch(context.request);
-  // }
-
-  const learnlick = async () => {
-    console.log(process.env);
-    let res = await onRequest();
-    // let res = await onRequestGet();
-    console.log("🍌", res);
-  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div onClick={learnlick}>Learn React</div>
-        {/* <div>{process.env.able}</div> */}
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Posts />} />
+      <Route path="/posts/:id" element={<Post />} />
+    </Routes>
   );
 }
 
