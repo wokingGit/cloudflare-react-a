@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import {onRequest} from './function/helloworld.js'
 
 function App() {
   async function onRequestGet(context) {
@@ -8,7 +9,8 @@ function App() {
 
   const learnlick = async () => {
     console.log(process.env)
-    let res = await onRequestGet();
+    let res = await onRequest()
+    // let res = await onRequestGet();
     console.log("🍌", res);
   };
   return (
