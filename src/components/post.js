@@ -8,14 +8,16 @@ const Post = () => {
     useEffect(() => {
         const getPost = async () => {
             const resp = await fetch(`/api/post/${id}`);
+            console.log('resp',resp)
             const postResp = await resp.json();
+            console.log('postResp',postResp)
             setPost(postResp);
         };
 
         getPost();
     }, [id]);
 
-    if (!Object.keys(post).length) return <div />;
+    if (!Object.keys(post).length) return <div></div>;
 
     return (
         <div>
