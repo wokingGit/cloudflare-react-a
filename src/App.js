@@ -7,6 +7,7 @@ function App() {
   }
 
   const learnlick = async () => {
+    consoel.log(process.env.able)
     let res = await onRequestGet();
     console.log("🍌", res);
   };
@@ -18,6 +19,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <div onClick={learnlick}>Learn React</div>
+        <div>{process.env.able}</div>
       </header>
     </div>
   );
