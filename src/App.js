@@ -7,7 +7,7 @@ function App() {
   }
 
   const learnlick = async () => {
-    consoel.log(process.env)
+    console.log(process.env)
     let res = await onRequestGet();
     console.log("🍌", res);
   };
