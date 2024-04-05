@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {onRequest} from './function/helloworld.js'
+import { onRequest } from "./function/helloworld.js";
 
 function App() {
-  async function onRequestGet(context) {
-    return context.env.SERVICE.fetch(context.request);
-  }
+  // async function onRequestGet(context) {
+  //   return context.env.SERVICE.fetch(context.request);
+  // }
 
   const learnlick = async () => {
-    console.log(process.env)
-    let res = await onRequest()
+    console.log(process.env);
+    let res = await onRequest();
     // let res = await onRequestGet();
     console.log("🍌", res);
   };
