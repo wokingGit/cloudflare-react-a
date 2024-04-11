@@ -5,10 +5,10 @@
 
 function App() {
   const cleckme = () => {
-    const formData = {
-      job: "程序员",
-      color: "pink",
-    };
+    // const formData = {
+    //   job: "程序员",
+    //   color: "pink",
+    // };
     // fetch("/api", {
     //   method: "POST",
     //   headers: {
