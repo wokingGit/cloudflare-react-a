@@ -5,22 +5,59 @@
 
 function App() {
   const cleckme = () => {
-    console.log(1111);
-    fetch("/api")
+    const formData = {
+      job: "程序员",
+      color: "pink",
+    };
+    // fetch("/api", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json", // 如果发送JSON数据
+    //     // 或者如果是表单数据：
+    //     // 'Content-Type': 'application/x-www-form-urlencoded'
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((data) => {
+    //     console.log(data);
+    //     return data.text();
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
+
+    fetch("/api/getData")
       .then((data) => {
-        console.log(data);
+        return data.text();
+      })
+      .then((res) => {
+        console.log("res", res);
+      });
+  };
+
+  const baseApi = "https://cloudflare-worker-a.woking.workers.dev";
+
+  const clickGetData = () => {
+    fetch(baseApi + "/getData")
+      .then((data) => {
         return data.text();
       })
       .then((res) => {
         console.log(res);
       });
   };
-  const click222 = () => {
-    // https://cloudflare-worker-a.woking.workers.dev/
-    const api = "https://cloudflare-worker-a.woking.workers.dev/";
-    fetch(api)
+  const clickEditData = () => {
+    const formData = { name: "订单流交易", type: "book" };
+    fetch(baseApi + "/editData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // 如果发送JSON数据
+        // 或者如果是表单数据：
+        // 'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: JSON.stringify(formData),
+    })
       .then((data) => {
-        console.log(data);
         return data.text();
       })
       .then((res) => {
@@ -31,7 +68,8 @@ function App() {
   return (
     <div>
       <button onClick={cleckme}>点我..</button>
-      <button onClick={click222}>点我22222</button>
+      <button onClick={clickGetData}>获取data</button>
+      <button onClick={clickEditData}>编辑data</button>
     </div>
     // <Routes>
     //   <Route path="/" element={<Posts />} />
