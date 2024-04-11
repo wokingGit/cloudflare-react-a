@@ -50,11 +50,11 @@ function App() {
     const formData = { name: "订单流交易", type: "book" };
     fetch(baseApi + "/editData", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json", // 如果发送JSON数据
-        // 或者如果是表单数据：
-        // 'Content-Type': 'application/x-www-form-urlencoded'
-      },
+      // headers: {
+      //   "Content-Type": "application/json", // 如果发送JSON数据
+      //   // 或者如果是表单数据：
+      //   // 'Content-Type': 'application/x-www-form-urlencoded'
+      // },
       body: JSON.stringify(formData),
     })
       .then((data) => {
