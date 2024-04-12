@@ -45,12 +45,15 @@ function App() {
   };
   const clickEditData = () => {
     const formData = { name: "订单流交易", type: "book" };
-    fetch("/editData", {
+    fetch(baseApi + "/editData", {
       method: "POST",
       headers: {
+        "access-control-allow-origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "content-type",
         // "Content-Type": "application/json", // 如果发送JSON数据
         // 或者如果是表单数据：
-        'Content-Type': 'application/x-www-form-urlencoded'
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify(formData),
     })
