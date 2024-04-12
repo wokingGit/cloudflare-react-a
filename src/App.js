@@ -1,8 +1,5 @@
 // import { Routes, Route } from "react-router-dom";
 
-// import Posts from "./components/posts";
-// import Post from "./components/post";
-
 function App() {
   const cleckme = () => {
     // const formData = {
@@ -48,7 +45,7 @@ function App() {
   };
   const clickEditData = () => {
     const formData = { name: "订单流交易", type: "book" };
-    fetch(baseApi + "/editData", {
+    fetch("/editData", {
       method: "POST",
       headers: {
         // "Content-Type": "application/json", // 如果发送JSON数据
